@@ -14,7 +14,11 @@ Phase 1: Job posting parser (not started). Phase 0 done, tagged v0.0.1.
   (Phase 0 done, Codex test carried over).
 
 ## Next step (exact)
-1. Start Phase 1: job posting parser (plan the data shape first: role, skills, tools, seniority).
+1. Phase 1 on branch `phase-1-parser`. `JobProfile` model done (src/proofwork/parser.py).
+   **User task:** implement `detect_seniority()` in parser.py until
+   `uv run pytest tests/test_seniority.py` passes (rules: intern/junior/entry-level/
+   senior/lead keywords, "N years" numbers, default mid). Then Claude reviews it.
+   After that: skill step (paste posting -> Claude fills JobProfile JSON -> validate + save to workspace/).
 2. Carry-over from Phase 0: test the skill in Codex CLI on/after 2026-11-12 (no Codex
    access until then) and before 2026-11-24.
 

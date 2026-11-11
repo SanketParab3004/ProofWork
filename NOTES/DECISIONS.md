@@ -14,3 +14,9 @@
 - **Privacy** – `private/` and `workspace/` gitignored for real postings, resumes, submissions.
   Local git identity = `SanketParab3004` + GitHub noreply email, never a personal email.
 - **Copyright holder in LICENSE = GitHub username** – avoids putting a real name in the repo.
+- **Parser = AI fills a schema, core validates** – the AI (Claude/Codex in skill mode) reads the
+  posting and outputs JobProfile JSON; core code only validates/cleans it, so it stays
+  provider-free. Rule-based helpers (e.g. `detect_seniority`) give a free baseline + cross-check.
+- **Pydantic for JobProfile** – popular, free; turns JSON into checked Python objects and rejects
+  bad values (e.g. unknown seniority) with clear errors.
+- **Feature branches + PR per phase** – `phase-1-parser` merges into `main` via a pull request.
