@@ -4,7 +4,7 @@ No AI provider here. In skill mode, Claude/Codex reads the posting and fills a
 JobProfile as JSON; this module validates and cleans it. The rule-based helpers
 give a free, testable baseline and a cross-check for the AI's answer.
 """
-
+import re
 from enum import Enum
 
 from pydantic import BaseModel, Field, field_validator
@@ -49,7 +49,24 @@ class JobProfile(BaseModel):
 
 def detect_seniority(text: str) -> Seniority:
     """Guess seniority from a job posting's text, using simple rules.
-
-    YOUR TASK (see NOTES/PROGRESS.md). Make tests/test_seniority.py pass.
     """
-    raise NotImplementedError
+    text = text.lower()
+    
+    if "intern" in text:
+        return Seniority.INTERN
+    if "lead" in text:
+        return Seniority.LEAD
+    if "senior" in text:
+        return Seniority.SENIOR
+    if "junior" in text or "entry-level" in text:
+        return Seniority.JUNIOR
+
+    match = re.search(r"(\d+)\+?\s*years", text)
+    if match:
+        years = int(match.group(1))
+        if years <= 2:
+            return Seniority.JUNIOR
+        if years >= 5:
+            return Seniority.SENIOR
+    
+    return Seniority.MID
