@@ -29,6 +29,19 @@
 ### Phase 0 recap
 Project skeleton, tests, notes, privacy-safe Git, public repo, and a skill that runs in Claude Code.
 
+## 2026-11-10 (Phase 1 start)
+
+- **Branch**: a parallel copy of the code (`phase-1-parser`); merged into `main` later with a PR.
+- **Pydantic model**: a strict "form" for data (JobProfile). Rejects bad values with clear errors.
+- **Tests first (TDD)**: write the tests as the spec, watch them fail, then write code until they pass.
+- **You wrote `detect_seniority()`**: `.lower()`, `if ... in text`, `return`, rule order matters
+  (first match wins), default value at the end.
+- **Regex**: `re.search(pattern, text)` finds a pattern. `\d+` = digits, `( )` = save it,
+  `?` = optional, `\b` = word boundary (so "intern" doesn't match "international").
+- **`int("3")`** turns text into a number you can compare.
+- **Reading a test failure**: `assert MID == LEAD` = your code returned MID, test expected LEAD.
+  A one-letter typo (`\belead\b`) caused it.
+
 ## Practice
 - Run `git status`, `git log --oneline` and `uv run pytest` yourself.
 - Add a second test to `tests/test_smoke.py` and make it pass.

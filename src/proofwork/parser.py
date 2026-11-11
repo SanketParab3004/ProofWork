@@ -51,10 +51,10 @@ def detect_seniority(text: str) -> Seniority:
     """Guess seniority from a job posting's text, using simple rules.
     """
     text = text.lower()
-    
-    if "intern" in text:
+
+    if re.search(r"\bintern(ship)?\b", text):
         return Seniority.INTERN
-    if "lead" in text:
+    if re.search(r"\blead\b", text):
         return Seniority.LEAD
     if "senior" in text:
         return Seniority.SENIOR

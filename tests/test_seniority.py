@@ -24,5 +24,19 @@ def test_detect_seniority(text, expected):
     assert detect_seniority(text) == expected
 
 
+@pytest.mark.parametrize(
+    "text, expected",
+    [
+        ("Data Analyst for our international team", Seniority.MID),
+        ("Data Engineer working on internal tools", Seniority.MID),
+        ("Data Engineer, leading tools in the market", Seniority.MID),
+        ("Data Engineer Internship program", Seniority.INTERN),
+        ("Tech Lead, Data Platform", Seniority.LEAD),
+    ],
+)
+def test_whole_words_only(text, expected):
+    assert detect_seniority(text) == expected
+
+
 def test_case_does_not_matter():
     assert detect_seniority("SENIOR DATA ANALYST") == Seniority.SENIOR
