@@ -1,28 +1,26 @@
 # Progress
 
 ## Current phase
-Phase 0: Setup (almost done; GitHub repo not created yet)
+Phase 0: Setup (almost done; only Codex test + v0.0.1 tag left)
 
 ## Done
 - 2026-11-10: Folder structure, notes files, AGENTS.md + CLAUDE.md, .gitignore, .env.example,
   MIT license, README draft, Python env (uv, Python 3.12, pytest, 1 smoke test passing),
   skill skeleton at `.claude/skills/proofwork/SKILL.md`, `git init` + first local commit.
+- 2026-11-10: `gh auth login` done; local `user.email` = GitHub noreply
+  (`133170529+SanketParab3004@...`); public repo created and pushed:
+  https://github.com/SanketParab3004/ProofWork
 
 ## Next step (exact)
-1. User runs `gh auth login` (GitHub account `SanketParab3004`) in a new terminal.
-2. Get noreply email: `gh api user --jq '"\(.id)+\(.login)@users.noreply.github.com"'`,
-   set it as local `user.email`, then `git commit --amend --reset-author --no-edit`.
-3. With user's OK: `gh repo create SanketParab3004/ProofWork --public --source . --push`.
-4. Test the skill skeleton in Codex CLI (see deadline below).
-5. Tag `v0.0.1` (end of Phase 0), learning recap, then start Phase 1 (job posting parser).
+1. Test the skill skeleton in Codex CLI (see deadline below).
+2. Tag `v0.0.1` (end of Phase 0), learning recap, then start Phase 1 (job posting parser).
 
 ## Deadlines
 - **2026-11-24: Codex + ChatGPT Plus access ends.** Test the skill in Codex CLI
   BEFORE this date (copy/link skill to `.agents/skills/proofwork/` and check it loads).
 
 ## Open problems
-- First commit uses placeholder noreply email `SanketParab3004@users.noreply.github.com`;
-  replace with the ID-based one after `gh auth login` (step 2), before pushing.
+- `gh` may not be on PATH in old shells; use "C:\Program Files\GitHub CLI\gh.exe".
 - Codex skill folder path to confirm when testing (`.agents/skills/` expected).
 
 ## LinkedIn posts
