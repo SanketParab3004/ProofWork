@@ -1,7 +1,7 @@
 # Progress
 
 ## Current phase
-Phase 0: Setup (almost done; only Codex test + v0.0.1 tag left)
+Phase 1: Job posting parser (not started). Phase 0 done, tagged v0.0.1.
 
 ## Done
 - 2026-11-10: Folder structure, notes files, AGENTS.md + CLAUDE.md, .gitignore, .env.example,
@@ -10,10 +10,13 @@ Phase 0: Setup (almost done; only Codex test + v0.0.1 tag left)
 - 2026-11-10: `gh auth login` done; local `user.email` = GitHub noreply
   (`133170529+SanketParab3004@...`); public repo created and pushed:
   https://github.com/SanketParab3004/ProofWork
+- 2026-11-10: User ran `/proofwork` in Claude Code themselves: works. Tagged `v0.0.1`
+  (Phase 0 done, Codex test carried over).
 
 ## Next step (exact)
-1. Test the skill skeleton in Codex CLI (see deadline below).
-2. Tag `v0.0.1` (end of Phase 0), learning recap, then start Phase 1 (job posting parser).
+1. Start Phase 1: job posting parser (plan the data shape first: role, skills, tools, seniority).
+2. Carry-over from Phase 0: test the skill in Codex CLI on/after 2026-11-12 (no Codex
+   access until then) and before 2026-11-24.
 
 ## Deadlines
 - **2026-11-24: Codex + ChatGPT Plus access ends.** Test the skill in Codex CLI

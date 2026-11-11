@@ -2,7 +2,7 @@
 
 > Turn any real job posting into a realistic simulated "first assignment" for that role.
 
-**Status:** early development (Phase 0: setup). Nothing usable yet.
+**Status:** early development. Phase 0 (setup) done; Phase 1 (job posting parser) next.
 
 ## The problem
 
@@ -53,7 +53,7 @@ Try the skill skeleton: open the folder in Claude Code and type `/proofwork`.
 
 ## Roadmap
 
-- [ ] Phase 0: Setup (repo, Python env, notes, skill skeleton)
+- [x] Phase 0: Setup (repo, Python env, notes, skill skeleton)
 - [ ] Phase 1: Job posting parser
 - [ ] Phase 2: Simulation generator (company, messy data, tasks)
 - [ ] Phase 3: AI manager (tasks over time, follow-ups, changing requirements, saved progress)

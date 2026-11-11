@@ -21,6 +21,14 @@
 - **MIT license**: lets anyone use, change and share the code, as long as they keep the notice.
   No warranty.
 
+- **GitHub + gh**: `gh repo create --source . --push` made the online repo and uploaded commits.
+  `origin` = nickname for the GitHub copy. "ahead 1" = a local commit not yet pushed.
+- **Noreply email**: GitHub gives each account a private address so commits never show your real email.
+- **Tag (v0.0.1)**: a permanent name for one commit, used to mark milestones/releases.
+
+### Phase 0 recap
+Project skeleton, tests, notes, privacy-safe Git, public repo, and a skill that runs in Claude Code.
+
 ## Practice
 - Run `git status`, `git log --oneline` and `uv run pytest` yourself.
 - Add a second test to `tests/test_smoke.py` and make it pass.
