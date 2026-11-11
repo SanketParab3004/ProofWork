@@ -1,0 +1,34 @@
+# --- Secrets: never commit ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# --- Private personal data: never commit ---
+# Put your own profile, resumes, real job postings and real submissions here.
+private/
+# Simulation runs created while using the skill (may contain real postings)
+workspace/
+
+# --- Python ---
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Claude Code local-only settings ---
+.claude/settings.local.json
