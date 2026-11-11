@@ -20,3 +20,5 @@
 - **Pydantic for JobProfile** – popular, free; turns JSON into checked Python objects and rejects
   bad values (e.g. unknown seniority) with clear errors.
 - **Feature branches + PR per phase** – `phase-1-parser` merges into `main` via a pull request.
+- **Whole-word regex for seniority keywords** – `\bintern(ship)?\b`, `\blead\b`, so words like
+  "international" or "leading" don't trigger false matches. Default is `mid` when no clue.

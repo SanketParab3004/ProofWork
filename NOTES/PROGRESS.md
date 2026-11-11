@@ -1,7 +1,7 @@
 # Progress
 
 ## Current phase
-Phase 1: Job posting parser (not started). Phase 0 done, tagged v0.0.1.
+Phase 1: Job posting parser (in progress, branch `phase-1-parser`, not pushed). Phase 0 done, tagged v0.0.1.
 
 ## Done
 - 2026-11-10: Folder structure, notes files, AGENTS.md + CLAUDE.md, .gitignore, .env.example,
@@ -12,13 +12,16 @@ Phase 1: Job posting parser (not started). Phase 0 done, tagged v0.0.1.
   https://github.com/SanketParab3004/ProofWork
 - 2026-11-10: User ran `/proofwork` in Claude Code themselves: works. Tagged `v0.0.1`
   (Phase 0 done, Codex test carried over).
+- 2026-11-10: Phase 1 started on branch `phase-1-parser`: `JobProfile` Pydantic model + tests;
+  user wrote `detect_seniority()` (keywords, whole-word regex, "N years" rule). 19 tests pass.
 
 ## Next step (exact)
-1. Phase 1 on branch `phase-1-parser`. `JobProfile` model done (src/proofwork/parser.py).
-   **User task:** implement `detect_seniority()` in parser.py until
-   `uv run pytest tests/test_seniority.py` passes (rules: intern/junior/entry-level/
-   senior/lead keywords, "N years" numbers, default mid). Then Claude reviews it.
-   After that: skill step (paste posting -> Claude fills JobProfile JSON -> validate + save to workspace/).
+1. Skill step for the parser: add a small core function that validates JobProfile JSON and
+   saves it to `workspace/<run>/job_profile.json`; update SKILL.md so `/proofwork` asks the
+   user to paste a posting, fills JobProfile JSON, and calls it via `uv run`. Test with a
+   SYNTHETIC posting. Give the user a small coding task in it.
+   Then: README screenshot, PR `phase-1-parser` -> `main` (teach PRs), tag v0.1.0,
+   draft LinkedIn post #1 (ask before pushing).
 2. Carry-over from Phase 0: test the skill in Codex CLI on/after 2026-11-12 (no Codex
    access until then) and before 2026-11-24.
 
